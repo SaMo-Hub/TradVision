@@ -8,7 +8,7 @@ interface TradingViewEmbedProps {
   height?: number;
 }
 
-export default function TradingViewEmbed({ symbol = "BTC", interval = "60", height = 420 }: TradingViewEmbedProps) {
+export default function TradingViewEmbed({ symbol = "BTC", interval = "60",  }: TradingViewEmbedProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   // Déterminer le symbole TradingView adapté
@@ -110,5 +110,5 @@ export default function TradingViewEmbed({ symbol = "BTC", interval = "60", heig
   }, [symbol, interval]);
 
   const id = `tv-widget-${String(symbol).toLowerCase().replace(/\^/g, "")}`;
-  return <div id={id} ref={containerRef} style={{ width: "100%", height: `${height}px` }} />;
+  return <div id={id} ref={containerRef} style={{ width: "100%", height: `100%` }} />;
 }
